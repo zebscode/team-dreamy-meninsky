@@ -1,4 +1,23 @@
-<!--The content below is only a placeholder and can be replaced.-->
-
-<app-project-display></app-project-display>
-<router-outlet></router-outlet>
+<div *ngIf="token.length == 0">
+    <div style="color: red; font-weight: bold;">{{(error ? error : '')}}</div>
+    <div>
+      <label htmlFor="username">Username:</label>
+      <input type="text" id="username" name="username" [(ngModel)]="user.username" />
+    </div>
+    <div>
+      <label htmlFor="password">Password:</label>
+      <input type="password" id="password" name="password" [(ngModel)]="user.password" />
+    </div>
+    <div>
+      <button (click)="onLogin()">Submit</button>
+    </div>
+  </div>
+  <div *ngIf="token.length > 0">
+    Logged In.
+  </div>
+  <div>
+    <button (click)="getValues()">Get Values</button>
+    <div>
+      {{data}}
+    </div>
+  </div>

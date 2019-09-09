@@ -9,7 +9,7 @@ import { User } from './models/user';
 })
 
 export class AppComponent {
-  title: string = 'team-dreamy-meninsky';
+  title: string = 'Lyfe Lynes';
   token: string = '';
   user: User = new User()
   error: string;
@@ -22,7 +22,7 @@ export class AppComponent {
     this.http.post<any>(this.base_url + 'login', { username: this.user.username, password: this.user.password }, { observe: 'response' })
     .subscribe(
       res => this.token = res.headers.get("Authorization"),
-      error => this.error = "Unbale to login with username and password.");
+      error => this.error = "Unable to login with username and password.");
     }
     getValues() {
       let headers: HttpHeaders = new HttpHeaders();

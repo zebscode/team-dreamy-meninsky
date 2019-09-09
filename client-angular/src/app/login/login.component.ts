@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { User } from '../models/user';
+import {Router} from '@angular/router';
+import {MatDialog} from '@angular/material'
 
 @Component({
   selector: 'app-login',
@@ -8,27 +8,16 @@ import { User } from '../models/user';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  title: string = 'team-dreamy-meninsky';
-  token: string = '';
-  user: User = new User()
-  error: string;
-  base_url: string = "http://localhost:8080/";
-  data: any;
-
-  constructor(private http: HttpClient) { }
-
-  ngOnInit() {}
-
-  onLogin() {
-    this.http.post<any>(this.base_url + 'login', { username: this.user.username, password: this.user.password }, { observe: 'response' })
-    .subscribe(
-      res => this.token = res.headers.get("Authorization"),
-      error => this.error = "Unable to login with username and password.");
+  constructor(private router: Router) { }
+username: string;
+password: string;
+  ngOnInit() {
+  }
+  login() : void {
+    if(this.username == 'admin' && this.password == 'admin'){
+     this.router.navigate(["user"]);
+    }else {
+      alert("Username or Password not recognized");
     }
-    getValues() {
-      let headers: HttpHeaders = new HttpHeaders();
-      headers.append("Authorization", this.token);
-      this.http.get(this.base_url + "api/values", { headers: headers })
-        .subscribe(res => this.data = res, error => this.error = "Unable to retrieve data.");
-    }
+  }
   }

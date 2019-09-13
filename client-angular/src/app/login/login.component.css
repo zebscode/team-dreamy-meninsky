@@ -1,0 +1,12 @@
+.example-card {
+    width: 400px;
+    margin: 10% auto;
+  }
+  .mat-card-title{
+    font-size: 16px;
+  }
+
+  span {
+    display: table;
+    margin: 0 auto;
+}

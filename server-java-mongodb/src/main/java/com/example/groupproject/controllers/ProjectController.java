@@ -34,12 +34,12 @@ public class ProjectController {
   }
 
   @DeleteMapping("/{id}")
-  public void deleteProject(@PathVariable String id) {
+  public void deleteProject(@PathVariable Long id) {
     projectRepository.deleteById(id);
   }
 
   @PutMapping("/{id}")
-  public Project updateProject(@PathVariable String id, @RequestBody Project project) {
+  public Project updateProject(@PathVariable Long id, @RequestBody Project project) {
     Project foundProject = projectRepository.findById(id).orElse(null);
     if (foundProject != null) {
       foundProject.setName(project.getName());

@@ -18,6 +18,7 @@ export class ProfileComponent implements OnInit {
 
       this.userService.getProfile().subscribe(user => (this.user = user));
     }
-  }
+  };
 
+  
   

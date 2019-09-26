@@ -1,9 +1,11 @@
 package com.example.groupproject.controllers;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +24,12 @@ public class ProfileController {
 
 	@Autowired
 	ProfileRepository profileRepository;
+
+	// this is a sample method that will retrieve the authenticated user name
+	@GetMapping("/username")
+	public String getProfile(Principal principal, Authentication authentication) {
+		return principal.getName();
+	}
 
 	@GetMapping("/profile")
 	public List<Profile> getProfiles() {
@@ -46,18 +54,18 @@ public class ProfileController {
 	}
 
 	@DeleteMapping("/profile/{id}")
-	public ResponseEntity<Profile> deleteProfile(@PathVariable(value = "id") Integer id){
+	public ResponseEntity<Profile> deleteProfile(@PathVariable(value = "id") Integer id) {
 		Profile foundProfile = profileRepository.findById(id).orElse(null);
-		if(foundProfile == null) {
+		if (foundProfile == null) {
 			return ResponseEntity.notFound().header("Message", "No profile with that ID has been found").build();
 		} else {
 			profileRepository.delete(foundProfile);
 		}
 		return ResponseEntity.ok().build();
 	}
-	
+
 	@PutMapping("/profile/{id}")
-	public ResponseEntity<Profile> updateProfile(@PathVariable(value = "id") Integer id, @RequestBody Profile profile){
+	public ResponseEntity<Profile> updateProfile(@PathVariable(value = "id") Integer id, @RequestBody Profile profile) {
 		Profile foundProfile = profileRepository.findById(id).orElse(null);
 		foundProfile.setFirstName(profile.getFirstName());
 		foundProfile.setLastName(profile.getLastName());

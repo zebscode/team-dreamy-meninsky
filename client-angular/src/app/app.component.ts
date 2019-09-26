@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { User } from './models/user';
+import { User } from '../app/user';
 
 @Component({
   selector: 'app-root',
@@ -29,5 +29,17 @@ export class AppComponent {
       headers.append("Authorization", this.token);
       this.http.get(this.base_url + "api/values", { headers: headers })
         .subscribe(res => this.data = res, error => this.error = "Unable to retrieve data.");
+    }
+  onProfile() {
+    this.http.post<any>(this.base_url + 'profile', { username: this.user.username, password: this.user.password }, { observe: 'response' })
+      res => this.token = res.headers.get("Authorization"),
+    .subscribe(
+      error => this.error = "Welcome to my Profile Page");
+    }
+    getValues() {
+      let headers: HttpHeaders = new HttpHeaders();
+      headers.append("Authorization", this.token);
+      this.http.get(this.base_url + "api/values", { headers: headers })
+        .subscribe(res => this.data = res, error => this.error = "Logged .");
     }
 }

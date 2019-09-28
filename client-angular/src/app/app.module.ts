@@ -8,9 +8,10 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { ProjectDisplayComponent } from './project-display/project-display.component';
 import { ProfileComponent } from './profile/profile.component';
+import { EditprofileComponent } from './editprofile/editprofile.component';
 
 @NgModule({
-  declarations: [AppComponent, ProjectDisplayComponent, ProfileComponent],
+  declarations: [AppComponent, ProjectDisplayComponent, ProfileComponent, EditprofileComponent],
   imports: [BrowserModule, BrowserAnimationsModule, CustomMaterialModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]

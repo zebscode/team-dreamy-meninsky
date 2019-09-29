@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
       // Ammon: console.log(x.headers.get("Authorization"));
       // Ammon: lets store the returned jwt token in localstorage
       localStorage.setItem("jwt", x.headers.get("Authorization"));
+      this.router.navigate(['/profile']);
 
       // localstorage primer
       // localStorage.setItem("key","value");

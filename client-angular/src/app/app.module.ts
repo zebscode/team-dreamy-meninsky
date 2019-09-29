@@ -9,12 +9,12 @@ import { AppComponent } from './app.component';
 import { ProjectDisplayComponent } from './project-display/project-display.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
-import { RegistrationComponent } from './registration/registration.component';
-
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
-  declarations: [AppComponent, ProjectDisplayComponent, LoginComponent, ProfileComponent, RegistrationComponent],
+  declarations: [AppComponent, ProjectDisplayComponent, LoginComponent, ProfileComponent, RegisterComponent],
+
   imports: [BrowserModule, BrowserAnimationsModule, CustomMaterialModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]

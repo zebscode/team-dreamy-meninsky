@@ -7,6 +7,6 @@ public class AuthConstants {
 	public static final String TOKEN_PREFIX = "Bearer ";
 	public static final String HEADER_STRING = "Authorization";
 	// Ammon: this needs to match the requestmapping in the homecontroller
-	public static final String SIGN_UP_URL = "/api/user/register";
+	public static final String SIGN_UP_URL = "/register";
 
 }

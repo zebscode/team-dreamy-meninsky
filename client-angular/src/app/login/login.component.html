@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<!-- <mat-toolbar color="primary">
   <mat-toolbar-row>
   <span title>Lyfe Lynes</span>
       <span class="example-fill-remaining-space"></span>
@@ -52,4 +52,36 @@
 
    <p>Not a user? <a href="" routerLink="/register" >Register</a> here.  </p>
 
- </mat-card> 
+ </mat-card>  -->
+
+ <div class="container-fluid">
+    <div class="row no-gutter">
+      <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+      <div class="col-md-8 col-lg-6">
+        <div class="login d-flex align-items-center py-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-9 col-lg-8 mx-auto">
+                <h3 class="login-heading mb-4">Welcome to Lyfe Lynes!</h3>
+                <form>
+                  <div class="form-label-group">
+                    <input type="text" id="inputUserName" class="form-control" placeholder="User Name" [(ngModel)]="user.username" name="username" required autofocus>
+                    <label for="inputUserName">User Name</label>
+                  </div>
+  
+                  <div class="form-label-group">
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" [(ngModel)]="user.password" name="password" required>
+                    <label for="inputPassword">Password</label>
+                  </div>  
+                 
+                  <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" (click)="login()" >Sign in</button>
+                  <div class="text-center">
+                     <p class="small" >Don't have a User Name<a class="small" href="#" routerLink="/register"> Register here.</a> </p></div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

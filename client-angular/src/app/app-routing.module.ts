@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProfileComponent } from './profile/profile.component';
-import { EditprofileComponent } from './editprofile/editprofile.component';
+import { ContactComponent } from './contact/contact.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
 
   { path: 'profile', component: ProfileComponent },
-  { path: 'editprofile', component: EditprofileComponent},
-  { path: '', component: ProfileComponent }
-  
+  { path: 'about', component: AboutComponent },
+  {path: 'contact', component: ContactComponent },
+  { path: '', redirectTo: "/profile", pathMatch: "full" }
   
 ];
 

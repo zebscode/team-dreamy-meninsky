@@ -5,9 +5,7 @@
     .mat-card-title{
     font-size: 16px;
     }
-    h1 {
-        text-align: center;
-    }
+    
     h2 {
         text-align: center;
     }
@@ -21,6 +19,14 @@
     img{
         width: 200px;
         height: 200px;
-        margin: auto;
-    }
+        align-items: center;
+        }
+
+   .div{
+       align-items: center;
+       margin: center;
+   }
+   h3 {
+       text-align: center;
+   }
     

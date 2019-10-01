@@ -8,12 +8,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProjectDisplayComponent } from './project-display/project-display.component';
 import { ProfileComponent } from './profile/profile.component';
+
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
-  declarations: [AppComponent, ProjectDisplayComponent, LoginComponent, ProfileComponent, RegisterComponent],
+  declarations: [AppComponent, ProjectDisplayComponent, LoginComponent, ProfileComponent, RegisterComponent, AboutComponent, ContactComponent],
 
   imports: [BrowserModule, BrowserAnimationsModule, CustomMaterialModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

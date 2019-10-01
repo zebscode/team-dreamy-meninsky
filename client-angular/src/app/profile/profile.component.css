@@ -1,13 +1,11 @@
-example-card {
+.example-card {
     width: 400px;
     margin: 10% auto;
     }
     .mat-card-title{
     font-size: 16px;
     }
-    h1 {
-        text-align: center;
-    }
+    
     h2 {
         text-align: center;
     }
@@ -15,4 +13,20 @@ example-card {
         display: table;
         margin: 0 auto;
     }
+    a {
+        color: white;
+    }
+    img{
+        width: 200px;
+        height: 200px;
+        align-items: center;
+        }
+
+   .div{
+       align-items: center;
+       margin: center;
+   }
+   h3 {
+       text-align: center;
+   }
     

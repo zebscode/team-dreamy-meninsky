@@ -1,0 +1,37 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+     <span>Lyfe Lynes</span>  
+    <span>Contact</span>
+        <span class="example-fill-remaining-space"></span>
+        <span class="align-center"></span>
+        <span class="example-spacer"></span>
+
+        <a href ="/profile"><button mat-button>Profile</button></a>
+        <a href ="/about"><button mat-button>About</button></a>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item enabled>
+        <mat-icon>notifications_on</mat-icon>
+        <span>Enable Notifications</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon>
+        <span>Disable Notifications</span>
+      </button>
+    </mat-menu>
+    <a href ="/login"><button mat-button>Logout</button></a>
+    <button mat-icon-button [matMenuTriggerFor]="menu"></button>
+     </mat-toolbar-row>
+    </mat-toolbar>
+
+
+
+
+<p>Contact Support</p>
+
+    <p>Connect with us:</p>
+       <p> Email us at: <a href="support@lyfelynes.com">support@lyfelynes.com</a></p>
+       <p> Call us at: 1-800-555-5555</p>

@@ -5,9 +5,10 @@
         <span class="example-fill-remaining-space"></span>
         <span class="align-center"></span>
         <span class="example-spacer"></span>
-       
-        <button mat-button>About</button>
-        <button mat-button>Contact</button>
+
+        <a href ="/about"><button mat-button>About</button></a>
+        <a href ="/contact"><button mat-button>Contact</button></a>
+        
         <button mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>more_vert</mat-icon>
     </button>
@@ -21,13 +22,41 @@
         <span>Disable Notifications</span>
       </button>
     </mat-menu>
-    <button mat-button>Logout</button>
+    <a href ="/login"><button mat-button>Logout</button></a>
+    
     <button mat-icon-button [matMenuTriggerFor]="menu"></button>
      </mat-toolbar-row>
     </mat-toolbar>
   
    <div>
-       <h1>First Name: <input placeholder="First Name"> Last Name: <input placeholder="Last Name"> </h1>
+
+
+       <h2>First Name: <input placeholder="First Name"> Last Name: <input placeholder="Last Name"> </h2>
+       <img src="/assets/profilepic.png">
+       
+      <div class="profile-userbuttons">
+        <button type="button" class="btn btn-primary btn-sm">Follow</button>
+        <button type="button" class="btn btn-danger btn-sm">Message</button>
+      </div>
+    
+    
+     
+				
+       
+       <h3>About Me</h3>
+            
+            
+            <h4>Location: <input placeholder="Location"></h4>
+            <h4>Work: <input placeholder="Work"></h4>
+            <h4>Education: <input placeholder="Education"></h4>
+            <h4>Interest: <input placeholder="Interest"></h4>
+
+      
+   </div>
+  
+  
+
+<!--        <h1>First Name: <input placeholder="First Name"> Last Name: <input placeholder="Last Name"> </h1>
             <h2>About Me</h2>
             
             
@@ -37,4 +66,5 @@
             <h3>Interest: <input placeholder="Interest"></h3>
   
       
-   </div>
+   </div> -->
+

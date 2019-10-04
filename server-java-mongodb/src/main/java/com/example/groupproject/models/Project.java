@@ -1,19 +1,23 @@
 package com.example.groupproject.models;
 
-import org.springframework.data.annotation.Id;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+
+
+@Entity
 public class Project {
 
   @Id
-  private String id;
+  private Long id;
   private String name;
   private String createdBy;
 
-  public String getId() {
+  public Long getId() {
     return this.id;
   }
 
-  public void setId(String id) {
+  public void setId(Long id) {
     this.id = id;
   }
 

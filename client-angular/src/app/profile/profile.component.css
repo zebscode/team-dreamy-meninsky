@@ -1,0 +1,39 @@
+.example-card {
+    width: 400px;
+    margin: 10% auto;
+    }
+    .mat-card-title{
+    font-size: 16px;
+    }
+    
+    h2 {
+        text-align: center;
+    }
+    span {
+        display: table;
+        margin: 0 auto;
+    }
+    a {
+        color: white;
+    }
+    img{
+        width: 200px;
+        height: 200px;
+        align-items: center;
+        }
+
+   .div{
+       align-items: center;
+       margin: center;
+   }
+   h3, h4 {
+       text-align: center;
+   }
+   .container {
+       align-content: center;
+       margin: 0 auto;
+       float: center;
+   }
+   h2 {
+       padding: 30px;
+   }

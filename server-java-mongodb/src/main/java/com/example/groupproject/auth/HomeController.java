@@ -13,21 +13,6 @@ public class HomeController {
 	
 	@Autowired
 	private MySQLUserDetailsService userService;
-	
-//    @GetMapping("/")
-//    public String getHomePage() {
-//        return "home";
-//    }
-//
-//    @GetMapping("/secure")
-//    public String getSecurePage() {
-//        return "secure";
-//    }
-//
-//    @GetMapping("/login")
-//    public String getLoginPage() {
-//        return "login";
-//    }
     
     @GetMapping("/register")
     public String getRegisterPage() {
@@ -36,22 +21,12 @@ public class HomeController {
     
     @PostMapping("/register")
     public void register(@RequestBody User newUser) {
-    	userService.Save(newUser);
+        User foundUser = userRepository.findByUsername(newUser.getUsername());
+        if(foundUser == null) {
+            userService.Save(newUser);
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Username not available");
+        }
     }
-    
-//    @PostMapping("/register")
-//    public String createUser(@RequestParam("username") String username, @RequestParam("password") String password, Model model) {
-//    	User foundUser = userRepository.findByUsername(username);
-//    	if (foundUser == null) {
-//    		User newUser = new User();
-//    		newUser.setUsername(username);
-//    		newUser.setPassword(password);
-//    		userService.Save(newUser);
-//    		return "login";
-//    	}
-//    	else {
-//    		model.addAttribute("exists", true);
-//    		return "register";
-//    	}
-//    }
 }

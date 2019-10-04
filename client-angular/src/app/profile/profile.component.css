@@ -26,7 +26,14 @@
        align-items: center;
        margin: center;
    }
-   h3 {
+   h3, h4 {
        text-align: center;
    }
-    
+   .container {
+       align-content: center;
+       margin: 0 auto;
+       float: center;
+   }
+   h2 {
+       padding: 30px;
+   }
